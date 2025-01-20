@@ -1,11 +1,11 @@
-// 1.21	2024-08-10T10:25:15.7741539	renewable coral/Tags for minecraft:item
-9f784658b5606a7ec6ac9e01bc832aed134dbda7 data\coral\tags\item\dead_bubble_corals.json
-3e103fa4828ced0553fe9ddcd05a9ddb383116bc data\coral\tags\item\brain_corals.json
-e37b39a58e4cdc13c905f4e287e51621eae23f61 data\coral\tags\item\tube_corals.json
-ae41cbf011adc81ac0c42bec15106911070df357 data\coral\tags\item\bubble_corals.json
-59427a854a158bf7002376013b2a972ec347aa83 data\coral\tags\item\fire_corals.json
-5963ed33a9ef56db729f0226a613e2c01425fb8f data\coral\tags\item\dead_tube_corals.json
-075ca2095fc82355b0aa3a25733b7c1d6aa4e162 data\coral\tags\item\dead_fire_corals.json
-8202a0c3f5b347cdb6f676f4606fdcacfec6b228 data\coral\tags\item\dead_horn_corals.json
-f4026f04a3d93cffdca0661e5551e53f5a7e7a32 data\coral\tags\item\horn_corals.json
-79c58e5010c65e249b222af585cd44dd22be32ba data\coral\tags\item\dead_brain_corals.json
+// 1.21.4	-999999999-01-01T00:00:00	renewable coral/Tags for minecraft:item
+3e103fa4828ced0553fe9ddcd05a9ddb383116bc data/coral/tags/item/brain_corals.json
+ae41cbf011adc81ac0c42bec15106911070df357 data/coral/tags/item/bubble_corals.json
+79c58e5010c65e249b222af585cd44dd22be32ba data/coral/tags/item/dead_brain_corals.json
+9f784658b5606a7ec6ac9e01bc832aed134dbda7 data/coral/tags/item/dead_bubble_corals.json
+075ca2095fc82355b0aa3a25733b7c1d6aa4e162 data/coral/tags/item/dead_fire_corals.json
+8202a0c3f5b347cdb6f676f4606fdcacfec6b228 data/coral/tags/item/dead_horn_corals.json
+5963ed33a9ef56db729f0226a613e2c01425fb8f data/coral/tags/item/dead_tube_corals.json
+59427a854a158bf7002376013b2a972ec347aa83 data/coral/tags/item/fire_corals.json
+f4026f04a3d93cffdca0661e5551e53f5a7e7a32 data/coral/tags/item/horn_corals.json
+e37b39a58e4cdc13c905f4e287e51621eae23f61 data/coral/tags/item/tube_corals.json

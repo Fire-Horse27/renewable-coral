@@ -3,10 +3,9 @@ package net.fire_horse27.coral.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fire_horse27.coral.util.ModTags;
-import net.minecraft.data.server.recipe.RecipeExporter;
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.recipe.RecipeExporter;
+import net.minecraft.data.recipe.RecipeGenerator;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
@@ -38,29 +37,39 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             Items.DEAD_HORN_CORAL_BLOCK);
 
     @Override
-    public void generate(RecipeExporter exporter) {
-        for(int i = 0; i < 5; i++) {
-            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, CORAL.get(i))
-                    .pattern("##")
-                    .pattern("##")
-                    .group("coral")
-                    .input('#', MATERIAL.get(i))
-                    .criterion(hasItem(CORALS.get(i * 2)), conditionsFromItem(CORALS.get(i * 2)))
-                    .criterion(hasItem(CORALS.get(i * 2 + 1)), conditionsFromItem(CORALS.get(i * 2 + 1)))
-                    .offerTo(exporter, "coral:" + CORAL.get(i).toString()
-                            .replace("minecraft:", ""));
-        }
+    protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup registries, RecipeExporter exporter) {
+        return new RecipeGenerator(registries, exporter) {
+            @Override
+            public void generate() {
+                for(int i = 0; i < 5; i++) {
+                    createShaped(RecipeCategory.BUILDING_BLOCKS, CORAL.get(i))
+                            .pattern("##")
+                            .pattern("##")
+                            .group("coral")
+                            .input('#', MATERIAL.get(i))
+                            .criterion(hasItem(CORALS.get(i * 2)), conditionsFromItem(CORALS.get(i * 2)))
+                            .criterion(hasItem(CORALS.get(i * 2 + 1)), conditionsFromItem(CORALS.get(i * 2 + 1)))
+                            .offerTo(exporter, "coral:" + CORAL.get(i).toString()
+                                    .replace("minecraft:", ""));
+                }
 
-        for(int i = 5; i < 10; i++) {
-            ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, CORAL.get(i))
-                    .pattern("##")
-                    .pattern("##")
-                    .group("dead_coral")
-                    .input('#', MATERIAL.get(i))
-                    .criterion(hasItem(CORALS.get(i * 2)), conditionsFromItem(CORALS.get(i * 2)))
-                    .criterion(hasItem(CORALS.get(i * 2 + 1)), conditionsFromItem(CORALS.get(i * 2 + 1)))
-                    .offerTo(exporter, "coral:" + CORAL.get(i).toString()
-                            .replace("minecraft:", ""));
-        }
+                for(int i = 5; i < 10; i++) {
+                    createShaped(RecipeCategory.BUILDING_BLOCKS, CORAL.get(i))
+                            .pattern("##")
+                            .pattern("##")
+                            .group("dead_coral")
+                            .input('#', MATERIAL.get(i))
+                            .criterion(hasItem(CORALS.get(i * 2)), conditionsFromItem(CORALS.get(i * 2)))
+                            .criterion(hasItem(CORALS.get(i * 2 + 1)), conditionsFromItem(CORALS.get(i * 2 + 1)))
+                            .offerTo(exporter, "coral:" + CORAL.get(i).toString()
+                                    .replace("minecraft:", ""));
+                }
+            }
+        };
+    }
+
+    @Override
+    public String getName() {
+        return "ModRecipeProvider";
     }
 }

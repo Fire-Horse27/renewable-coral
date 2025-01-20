@@ -3,9 +3,7 @@
   "category": "building",
   "group": "dead_coral",
   "key": {
-    "#": {
-      "tag": "coral:dead_tube_corals"
-    }
+    "#": "#coral:dead_tube_corals"
   },
   "pattern": [
     "##",

@@ -3,9 +3,7 @@
   "category": "building",
   "group": "coral",
   "key": {
-    "#": {
-      "tag": "coral:brain_corals"
-    }
+    "#": "#coral:brain_corals"
   },
   "pattern": [
     "##",

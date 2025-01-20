@@ -3,9 +3,7 @@
   "category": "building",
   "group": "coral",
   "key": {
-    "#": {
-      "tag": "coral:horn_corals"
-    }
+    "#": "#coral:horn_corals"
   },
   "pattern": [
     "##",
